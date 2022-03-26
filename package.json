@@ -42,7 +42,8 @@
   "dependencies": {
     "yeoman-generator": "^3.2.0",
     "chalk": "^2.4.2",
-    "yosay": "^2.0.2"
+    "yosay": "^2.0.2",
+    "@snyk/protect": "latest"
   },
   "jest": {
     "testEnvironment": "node"
@@ -82,8 +83,11 @@
   "scripts": {
     "pretest": "eslint .",
     "precommit": "lint-staged",
-    "test": "jest"
+    "test": "jest",
+    "prepare": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "repository": "DimensionSoftware/generator-shopify-nextjs",
-  "license": "MIT"
+  "license": "MIT",
+  "snyk": true
 }
